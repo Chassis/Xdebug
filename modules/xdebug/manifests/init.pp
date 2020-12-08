@@ -58,7 +58,7 @@ class xdebug (
 			require => Package['php5-cli','php5-xdebug'],
 		}
 	} else {
-		package { 'php-xdebug':
+		package { "php${php_version}-xdebug":
 			ensure  => $package,
 			require => Package["php${php_version}-fpm", "php${php_version}-cli"],
 			notify  => Service["php${php_version}-fpm"],
@@ -70,7 +70,7 @@ class xdebug (
 			owner   => 'root',
 			group   => 'root',
 			mode    => '0644',
-			require => Package["php${php_version}-fpm",'php-xdebug'],
+			require => Package["php${php_version}-fpm","php${php_version}-xdebug"],
 			notify  => Service["php${php_version}-fpm"],
 		}
 
@@ -80,7 +80,7 @@ class xdebug (
 			owner   => 'root',
 			group   => 'root',
 			mode    => '0644',
-			require => Package["php${php_version}-cli", 'php-xdebug'],
+			require => Package["php${php_version}-cli", "php${php_version}-xdebug"]
 		}
 	}
 
@@ -89,8 +89,8 @@ class xdebug (
 		path => '/etc/environment',
 		line => "PHP_IDE_CONFIG=\"serverName=${hosts}\""
 	}
-	file_line { 'XDEBUG_CONFIG':
+	file_line { 'XDEBUG_SESSION':
 		path => '/etc/environment',
-		line => "XDEBUG_CONFIG=\"idekey=${ide_name}\""
+		line => "XDEBUG_SESSION=\"${ide_name}"
 	}
 }
