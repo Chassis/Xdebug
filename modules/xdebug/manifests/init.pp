@@ -91,6 +91,6 @@ class xdebug (
 	}
 	file_line { 'XDEBUG_SESSION':
 		path => '/etc/environment',
-		line => "XDEBUG_SESSION=\"${ide_name}"
+		line => "XDEBUG_SESSION=\"${ide_name}\""
 	}
 }
