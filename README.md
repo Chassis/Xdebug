@@ -54,7 +54,13 @@ git clone https://github.com/Chassis/Xdebug ~/.chassis/extensions/xdebug
 7. Go to the Debug tab in the sidebar and click the small gear icon at the top of the left column; select "PHP" from the menu that will pop up to auto-create a `launch.json` PHP debugging configuration file in your project<br />![Selecting the "configure launch.json" button in VS Code](https://user-images.githubusercontent.com/442115/37500902-5055a80c-28a2-11e8-85f2-fe66c943ba7b.png)
 8. Add a "pathMappings" key to the "Listen for Xdebug" launch configuration to map the `${workspaceFolder}` to the `/vagrant` or `/chassis` (if you are using [paths](http://docs.chassis.io/en/latest/config/#paths)) directory within the virtual machine _e.g._<br />![Configuring "pathMappings": { "/vagrant": "${workspaceFolder}" } inside VS Code launch.json file](https://s3.amazonaws.com/bronsons-captured/launch.json__chassis_2019-08-20_13-34-35.png)
 9. Click `Start Debugging` in the left column of the Debug tab _e.g._<br />![The "Start Debugging" button in VS Code](https://user-images.githubusercontent.com/442115/37501949-ed1803e8-28a6-11e8-81f8-3cdaf7d6c1ce.png)
-9. Set a breakpoint in VS Code, refresh the page you with to debug in the browser, and start debugging!
+10. Set a breakpoint in VS Code, refresh the page you with to debug in the browser, and start debugging!
+
+### Eclipse
+6. Go to Preferences -> PHP -> Debug -> Debuggers
+7. Add Xdebug in the Supported PHP Debuggers section.
+8. Change your settings to the following ![Eclipse Settings](https://s3.amazonaws.com/bronsons-captured/eclipse-xdebug-for-chassis.png)
+
 
 ## Xdebug Profiling
 If you'd like to enable Xdebug Profiling you can do so by doing either of the following:
