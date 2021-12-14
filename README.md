@@ -20,8 +20,14 @@ git clone https://github.com/Chassis/Xdebug ~/.chassis/extensions/xdebug
 4. By default PHPSTORM is the default IDE. This can be overridden in your any of your [`.yaml`](https://github.com/Chassis/Chassis/blob/master/config.yaml#L6-#L9) files by adding in:
 `ide: ATOM` and replacing ATOM with your IDE of choice. If you do this then please be sure to change your IDE Key in the Xdebug Helper extension mentioned below.
 5. By default `9000` is the port for `xdebug.remote_port`. In some cases you may need to change this, depending on what other services are running on your machine. This can be overridden in your any of your [`.yaml`](https://github.com/Chassis/Chassis/blob/master/config.yaml#L6-#L9) files by adding in:
-`port: 9001` and replacing 9001 with your port of choice. If you do this then please be sure to change the port your IDE is listening to for DBGp connections.
-6. Configure your browser and your IDE, set a breakpoint, and happy debugging!
+`port: 9001` and replacing 9001 with your port of choice. If you do this then please be sure to change the port your IDE is listening to for DBGP connections.
+6. Here's an example `.yaml` file based on the above configuration:
+    ```.yaml
+    ide: ATOM
+    port: 9001
+    ```
+7. Run `vagrant provision` so that the new values are set in your virtual machine.
+8. Configure your browser and your IDE, set a breakpoint, and happy debugging!
 
 ## Browser Setup
 
